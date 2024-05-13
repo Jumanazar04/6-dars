@@ -1,0 +1,96 @@
+.contact{
+    width: 1520px;
+    height: 316px;
+    margin: 0 auto;
+    background: url('../../../assets/cartImg.png');
+    background-size: 100%;
+}
+
+.contact{
+    text-align: center;
+    padding-top: 120px;
+}
+
+.contact h1{
+    font-family: 'Poppins' sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 72px;
+    margin: 0;  
+}
+
+.contact p{
+    font-family: 'Poppins' sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin: 0;
+}
+
+.contact span{
+    font-family: 'Poppins' sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    margin: 0;    
+}
+
+.touch{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.touchTaxt{
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+
+.touchTaxt1{
+    text-align: center;
+}
+
+.touch1{
+    display: flex;
+    flex-direction: column;
+}
+
+.touchCard{
+    max-width: 212px;
+}
+
+.touchCard h4{
+    font-family: 'Poppins' sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;    
+    margin: 0;
+}
+
+.touchCard p{
+    font-family: 'Poppins' sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;    
+}
+
+.touch2 form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.touch2 form input{
+    width: 528.75px;
+    margin-top: 10px;
+    height: 50px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #9F9F9F;
+}
+
+.touch2 label{
+    font-family: 'Poppins' sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}

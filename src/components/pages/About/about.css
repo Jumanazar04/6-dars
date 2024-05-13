@@ -1,0 +1,75 @@
+.about{
+    width: 1520px;
+    height: 316px;
+    margin: 0 auto;
+    background: url('../../../assets/cartImg.png');
+    background-size: 100%;
+}
+
+.about{
+    text-align: center;
+    padding-top: 120px;
+}
+
+.about h1{
+    font-family: 'Poppins' sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 72px;
+    margin: 0;  
+}
+
+.about p{
+    font-family: 'Poppins' sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin: 0;
+}
+
+.about span{
+    font-family: 'Poppins' sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    margin: 0;    
+}
+
+.detail1{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.detail1 form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.detail1 form input{
+    width: 400px;
+    height: 60px;
+    border: 1px solid #9F9F9F;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.detail1 label{
+    font-family: 'Poppins' sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;    
+}
+
+.mainInput{
+    width: 450px;
+    display: flex;
+    gap: 20px;
+}
+
+.mainInput input{
+    width: 180px !important ;
+}

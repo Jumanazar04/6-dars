@@ -1,0 +1,36 @@
+.shop{
+    width: 1520px;
+    height: 316px;
+    margin: 0 auto;
+    background: url('../../../assets/cartImg.png');
+    background-size: 100%;
+}
+
+.shop{
+    text-align: center;
+    padding-top: 120px;
+}
+
+.shop h1{
+    font-family: 'Poppins' sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 72px;
+    margin: 0;  
+}
+
+.shop p{
+    font-family: 'Poppins' sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin: 0;
+}
+
+.shop span{
+    font-family: 'Poppins' sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    margin: 0;    
+}
