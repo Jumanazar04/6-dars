@@ -4,7 +4,27 @@ import dining from '../../../assets/dining.png';
 import living from '../../../assets/living.png';
 import bedroom from '../../../assets/bedroom.png';
 
+const images = {
+    'dining.png': dining,
+    'living.png': living,
+    'bedroom.png': bedroom
+}
+
 class Home extends Component {
+    constructor(){
+        super()
+        this.state = { cards: []};
+    }
+
+
+    componentDidMount(){
+        fetch('https://test-ecommerce-gamma.vercel.app/categories ')
+            .then(response => {
+                return response.json()
+            }).then(data => {
+                this.setState({ cards: data })
+            })
+    }
     render() {
         return (
             <>
@@ -23,18 +43,20 @@ class Home extends Component {
                         <h2>Browse The Range</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         <div className="homeCards">
-                            <div className="homeCard">
-                                <img src={dining} alt="img" />
-                                <h3>Dining</h3>
+                            {this.state.cards.map((data) =>( 
+                                <div className="homeCard">
+                                <img src={images[data.img]} alt="img" />
+                                <h3>{data.name}</h3>
                             </div>
-                            <div className="homeCard">
+                            ))}
+                            {/* <div className="homeCard">
                                 <img src={living} alt="img" />
                                 <h3>Living</h3>
                             </div>
                             <div className="homeCard">
                                 <img src={bedroom} alt="img" />
                                 <h3>Bedroom</h3>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </section>

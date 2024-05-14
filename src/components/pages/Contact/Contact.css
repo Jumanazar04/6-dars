@@ -94,3 +94,15 @@
     font-weight: 500;
     line-height: 24px;
 }
+
+.btn{
+    padding: 15px;
+    font-family: 'Poppins' sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    background-color: #B88E2F;
+    border: none;
+    cursor: pointer;
+    color: white;
+}

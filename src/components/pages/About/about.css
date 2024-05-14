@@ -1,5 +1,5 @@
 .about{
-    width: 1520px;
+    width: 1520px !important;
     height: 316px;
     margin: 0 auto;
     background: url('../../../assets/cartImg.png');

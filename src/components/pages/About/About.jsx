@@ -6,7 +6,7 @@ class About extends Component {
     render() {
         return (
             <>
-                <section className='about container'>
+                <section className='about '>
                 <div className="container">
                     <div className="checkOut">
                         <img src={logo} alt="img" />
