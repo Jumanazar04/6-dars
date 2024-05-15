@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './about.css';
 import logo from '../../../assets/logo.png';
 
-class About extends Component {
-    render() {
+function About() {
+    
         return (
             <>
                 <section className='about '>
@@ -43,7 +43,7 @@ class About extends Component {
             </>
             
         );
-    }
+    
 }
 
 export default About;

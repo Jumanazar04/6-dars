@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import './Layout.css'
 import logo from '../../assets/logo.png';
@@ -7,8 +7,8 @@ import img2 from '../../assets/search.png';
 import img3 from '../../assets/heart.png';
 import img4 from '../../assets/shopping.png';
 
-class Layout extends Component {
-    render() {
+function Layout() {
+    
         return (
           <>  <nav className='container'>
                 <div className="logo">
@@ -16,7 +16,7 @@ class Layout extends Component {
                     <p className="logoText">Furniro</p>
                 </div>
                 <ul>
-                    <NavLink to={"/"} >
+                    <NavLink to={"/home"} >
                         Home
                     </NavLink>
                     <NavLink to={"/shop"}>
@@ -49,7 +49,7 @@ class Layout extends Component {
                         </div>
                         <div className="footerLinks">
                             <span>Links</span>
-                            <Link className='footerLink' to={"/"}>Home</Link>
+                            <Link className='footerLink' to={"/home"}>Home</Link>
                             <Link className='footerLink' to={"/shop"}>Shop</Link>
                             <Link className='footerLink' to={"/about"}>About</Link>
                             <Link className='footerLink' to={"/contact"}>Contact</Link>
@@ -70,7 +70,7 @@ class Layout extends Component {
             </footer>
         </>
         );
-    }
+    
 }
 
 export default Layout;

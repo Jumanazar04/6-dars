@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './home.css'
 import dining from '../../../assets/dining.png';
 import living from '../../../assets/living.png';
@@ -10,14 +10,13 @@ const images = {
     'bedroom.png': bedroom
 }
 
-class Home extends Component {
-    constructor(){
-        super()
-        this.state = { cards: []};
-    }
+function Home() {
+    const [ ] = useState({
+        cards: []
+    })
 
 
-    componentDidMount(){
+    function fetched(){
         fetch('https://test-ecommerce-gamma.vercel.app/categories ')
             .then(response => {
                 return response.json()
@@ -25,7 +24,7 @@ class Home extends Component {
                 this.setState({ cards: data })
             })
     }
-    render() {
+    fetched()
         return (
             <>
                 <header >
@@ -62,7 +61,7 @@ class Home extends Component {
                 </section>
             </>
         );
-    }
+    
 }
 
 export default Home;

@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, {  } from 'react';
 import './shop.css'
 import logo from '../../../assets/logo.png';
 
-class Shop extends Component {
-    render() {
+function Shop() {
+
         return (
             <div>
                 <section className='shop'>
@@ -17,7 +17,7 @@ class Shop extends Component {
                 </section>
             </div>
         );
-    }
+    
 }
 
 export default Shop;
