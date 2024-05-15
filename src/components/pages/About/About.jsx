@@ -9,7 +9,7 @@ function About() {
                 <section className='about '>
                 <div className="container">
                     <div className="checkOut">
-                        <img src={logo} alt="img" />
+                        <img className='mx-auto' src={logo} alt="img" />
                         <h1>Checkout</h1>
                         <p>Home <span>ChekcOut</span></p>
                     </div>
@@ -18,7 +18,7 @@ function About() {
             <section className='container'>
             <div className="detailes">
                     <div className="detail1">
-                        <h2>Billing detailes</h2>
+                        <h2 className='text-3xl font-bold my-8'>Billing detailes</h2>
                         <form action="#">
                             <div className="mainInput">
                                 <label htmlFor="firstName">First Name <br /> <input type="text" /></label>

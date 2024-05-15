@@ -16,7 +16,7 @@ function Layout() {
                     <p className="logoText">Furniro</p>
                 </div>
                 <ul>
-                    <NavLink to={"/home"} >
+                    <NavLink to={"/"} >
                         Home
                     </NavLink>
                     <NavLink to={"/shop"}>
@@ -49,7 +49,7 @@ function Layout() {
                         </div>
                         <div className="footerLinks">
                             <span>Links</span>
-                            <Link className='footerLink' to={"/home"}>Home</Link>
+                            <Link className='footerLink' to={"/"}>Home</Link>
                             <Link className='footerLink' to={"/shop"}>Shop</Link>
                             <Link className='footerLink' to={"/about"}>About</Link>
                             <Link className='footerLink' to={"/contact"}>Contact</Link>
