@@ -1,26 +1,32 @@
-// src/Login.js
-
 import React, { useState } from 'react';
 import style from './Login.module.css'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
     const navigate = useNavigate();
-    const [showPassword, setShowPassword] = useState(false);
+    const handleLogin = async () => {
+        try {
+            const response = await axios.post('https://localhost:9001/auth', {
+                login: username,
+                password: password
+            });
+            console.log(username, password);
+            if (!response.ok) {
+                throw new Error('Login failed');
+            }
 
-    const handleLogin = (e) => {
-        e.preventDefault();
-        if (username === 'user' && password === 'test1234') {
-            navigate('/home')
-        } else {
-            alert('Invalid username or password. Please try again.');
+            const data = await response.json();
+            const token = data.token;
+
+            localStorage.setItem('token', token);
+
+            navigate.push('/home');
+        } catch (error) {
+            console.error('Login error:', error.message);
         }
-    };
-
-    const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword);
     };
 
     return (
@@ -40,17 +46,14 @@ const Login = () => {
                 <div className={style.hideButton}>
                     <input
                         className={style.input}
-                        type={showPassword ? "text" : "password"}
+                        type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                    <button type="button" className={style.b} onClick={togglePasswordVisibility}>
-                        {showPassword ? 'Hide' : 'Show'} 
-                    </button>
                 </div>
                 <br />
-                <button className={style.button} type="submit">Login</button>
+                <button className={style.button} type="button">Login</button>
             </form>
         </div>
     );
