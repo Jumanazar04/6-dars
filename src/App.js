@@ -9,6 +9,8 @@ import Login from './components/pages/Login';
 import SingleProduct from './components/pages/SingleProduct';
 
 function App() {
+  const nam = 0;
+  console.log(nam);
   return (
     <>
       <BrowserRouter>
