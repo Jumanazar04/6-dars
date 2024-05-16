@@ -13,7 +13,7 @@ const SingleProduct = () => {
                 const response = await fetch('https://test-ecommerce-gamma.vercel.app/products');
                 const data = await response.json();
                 
-                const foundCard = data.find((el) => el.id == params.id);
+                const foundCard = data.find((el) => el.id === params.id);
                 
                 if (foundCard) {
                     setCard(foundCard);
