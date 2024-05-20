@@ -1,64 +1,64 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+// import { toast } from 'react-toastify';
+import 'react-toastify/ReactToastify.css';
 
-const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const history = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
 
-    try {
-      const response = await fetch('https://test-ecommerce-gamma.vercel.app/auth ', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        localStorage.setItem('token', data.token);
-        history.push('/home');
-      } else {
-        alert('Invalid credentials. Please try again.');
-      }
-    } catch (error) {
-      console.error('Login error:', error);
-      alert('An error occurred. Please try again later.');
-    }
-  };
-
-  return (
-    <div className='w-screen h-screen bg-gray-200 flex items-center justify-center'>
-        <div className='p-6 bg-white text-center'>
-        <h2 className='text-2xl font-bold mb-4'>Login</h2>
-        <form className='flex gap-4 flex-col' onSubmit={handleLogin}>
-            <div className='flex justify-between gap-4 items-center'>
-            <label>Username:</label>
-            <input
-                className='p-2 border rounded-lg bg-gray-100'
-                type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-            />
+const LoginPage = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+    // const notify = () => toast("Login yoki parol xato");
+    // const getDataLclStorge = localStorage.getItem('auth-token')    
+        async function fetched(){
+                try {
+                    const response = await axios.post(
+                        'https://ecommerce-backend-fawn-eight.vercel.app/api/auth',
+                        {
+                            email: email,
+                            password: password
+                        }
+                    );
+                    if (response.data) {
+                        navigate('/')
+                        localStorage.setItem('auth-token', (response.data))
+                    }
+                } catch (error) {
+                    alert('Login yoki parol xato')
+                }
+        }
+    return (
+        <div className='w-screen h-screen flex items-center justify-center bg-gray-300'>
+            <div className='p-6 flex flex-col text-center bg-white rounded-lg'>
+                <h2 className='pb-2 text-2xl font-bold'>Login</h2>
+                <form onSubmit={fetched} className='flex flex-col gap-4 mb-3'  action="#">
+                    <div className='flex justify-between items-center'>
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            className='p-3 border bg-gray-100 rounded-lg' 
+                            onChange={(e) => (
+                             setEmail(e.target.value)
+                            )}
+                            value={email}
+                            type="text" />
+                    </div>
+                    <div className='flex justify-between items-center gap-2'>
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            className='p-3 border bg-gray-100 rounded-lg' 
+                            onChange={(e) => (
+                                setPassword(e.target.value)
+                            )}
+                            value={password}
+                            type="password" />
+                    </div>
+                    <button type='submit' className='py-2 border rounded-lg bg-blue-600 text-white font-bold'>Login</button>
+                </form>
             </div>
-            <div className='flex justify-between gap-4 items-center'>
-            <label>Password:</label>
-            <input
-                className='p-2 border rounded-lg bg-gray-100'
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            </div>
-            <button className='border rounded-lg p-2 bg-blue-600 text-white' type="submit">Login</button>
-        </form>
         </div>
-    </div>
-  );
-};
+    );
+}
 
-export default Login;
+export default LoginPage;

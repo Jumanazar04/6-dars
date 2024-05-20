@@ -7,8 +7,9 @@ import Home from './components/pages/Home/Home';
 import Shop from './components/pages/Shop/Shop';
 import About from './components/pages/About/About';
 import Contact from './components/pages/Contact/Contact';
-const Login = React.lazy(() => import("./components/pages/Login")) ;
-const SingleProduct = React.lazy(() => import('./components/pages/SingleProduct')) 
+import LoginPage from './components/pages/Login';
+import SingleProduct from './components/pages/SingleProduct';
+
 
 
 
@@ -25,7 +26,7 @@ function App() {
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/products/:id' element={<SingleProduct />}/>
           </Route>
-          <Route path='/login' element={<Login />}/>
+          <Route path='/login' element={<LoginPage/>}/>
         </Routes>
       </BrowserRouter>
     </>
