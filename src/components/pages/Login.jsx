@@ -10,8 +10,7 @@ const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    // const notify = () => toast("Login yoki parol xato");
-    // const getDataLclStorge = localStorage.getItem('auth-token')    
+    // const notify = () => toast("Login yoki parol xato");  
         async function fetched(){
                 try {
                     const response = await axios.post(
@@ -22,13 +21,16 @@ const LoginPage = () => {
                         }
                     );
                     if (response.data) {
-                        navigate('/')
                         localStorage.setItem('auth-token', (response.data))
+                    }
+                    if (localStorage.getItem("auth-token")) {
+                        navigate('/')
                     }
                 } catch (error) {
                     alert('Login yoki parol xato')
                 }
         }
+
     return (
         <div className='w-screen h-screen flex items-center justify-center bg-gray-300'>
             <div className='p-6 flex flex-col text-center bg-white rounded-lg'>
