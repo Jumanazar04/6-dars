@@ -15,6 +15,8 @@ function Layout() {
 
         if (!getToken) {
             navigate('/login')
+        }else{
+            navigate('/')
         }
         
     }, [navigate]);
