@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import './Layout.css'
 import logo from '../../assets/logo.png';
 import img1 from '../../assets/person.png';
@@ -8,6 +8,16 @@ import img3 from '../../assets/heart.png';
 import img4 from '../../assets/shopping.png';
 
 function Layout() {
+    const navigate = useNavigate();
+    useEffect(() => {
+        
+        const getToken = localStorage.getItem("auth-token")
+
+        if (!getToken) {
+            navigate('/login')
+        }
+        
+    }, [navigate]);
     
         return (
           <>  <nav className='container'>
