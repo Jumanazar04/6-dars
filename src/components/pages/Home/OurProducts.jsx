@@ -1,23 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './OurProducts.css'
 import { Link } from 'react-router-dom';
+import UseGetData from '../useGetData';
 
 const OurProducts = () => {
 
-    const [cards, setCards] = useState([]);
-
-    useEffect(()=>{
-        const fetchData = async ()=>{
-            try{
-                const response = await fetch('https://test-ecommerce-gamma.vercel.app/products ')
-                const data = await response.json();
-                setCards(data)
-            } catch(err){
-                console.log("Xatolik yuz berdi", err);
-            }
-        }
-        fetchData()
-    }, []);
+    const cards = UseGetData("products")
     
     return (
         <div className='container'>

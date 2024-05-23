@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './home.css';
 import dining from '../../../assets/dining.png';
 import living from '../../../assets/living.png';
 import bedroom from '../../../assets/bedroom.png';
 import OurProducts from './OurProducts';
+import UseGetDataC from './useGetDataC';
 
 const images = {
     'dining.png': dining,
@@ -12,21 +13,7 @@ const images = {
 };
 
 function Home() {
-    const [cards, setCards] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch('https://test-ecommerce-gamma.vercel.app/categories');
-                const data = await response.json();
-                setCards(data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-
-        fetchData();
-    }, []);
+    const cards = UseGetDataC("categories")
 
     return (
         <>
