@@ -1,7 +1,7 @@
 import React from 'react';
 import './OurProducts.css'
 import { Link } from 'react-router-dom';
-import UseGetData from '../useGetData';
+import UseGetData from '../../hooks/useFetch';
 
 const OurProducts = () => {
 

@@ -4,7 +4,8 @@ import dining from '../../../assets/dining.png';
 import living from '../../../assets/living.png';
 import bedroom from '../../../assets/bedroom.png';
 import OurProducts from './OurProducts';
-import UseGetDataC from './useGetDataC';
+import useFetch from '../../hooks/useFetch'
+import useMobile from '../../hooks/useMobile';
 
 const images = {
     'dining.png': dining,
@@ -13,7 +14,8 @@ const images = {
 };
 
 function Home() {
-    const cards = UseGetDataC("categories")
+    const cards = useFetch("categories")
+    const ismobile = useMobile();
 
     return (
         <>
@@ -22,6 +24,7 @@ function Home() {
                     <div className="headerCard">
                         <span>New Arrival</span>
                         <h1 className='my-5'>Discover Our <br />New Collection</h1>
+                        {ismobile ? 'Mobile Qurilma' : 'Desktop Qurilma'}
                         <p className='my-5'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
                         <button className='my-10'>BUY NOW</button>
                     </div>

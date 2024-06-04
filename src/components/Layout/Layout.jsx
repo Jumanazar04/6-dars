@@ -6,9 +6,10 @@ import img1 from '../../assets/person.png';
 import img2 from '../../assets/search.png';
 import img3 from '../../assets/heart.png';
 import img4 from '../../assets/shopping.png';
+import { useAuth } from '../hooks/useAuth';
 
 function Layout() {
-
+    useAuth()
     
         return (
           <>  <nav className='container'>
