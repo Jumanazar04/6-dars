@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from "react"; 
+import  { useState, useEffect } from 'react';
 
 function useMobile() {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
